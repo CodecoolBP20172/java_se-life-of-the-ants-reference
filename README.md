@@ -1,4 +1,4 @@
-#Life of the Ants
+# Life of the Ants
 
 In an Ant colony there are four different castes: Workers, Soldiers, Drones, and there is a Queen.
 - For the sake of simplicity let they live on a grid. Ants have an actual (x, y) position (initialize these within the limits of the colony, e.g. 100 steps). They change their positions in each timestep, according to a caste-specific rule:
