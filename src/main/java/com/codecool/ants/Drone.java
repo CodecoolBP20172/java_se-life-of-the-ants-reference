@@ -8,7 +8,8 @@ public class Drone extends Ant {
     private Queen queen;
     private int counterAfterMating;
 
-    public Drone(Queen queen) {
+    public Drone(int x, int y, Queen queen) {
+        super(x, y);
         this.queen = queen;
     }
 
@@ -28,11 +29,10 @@ public class Drone extends Ant {
     }
 
     private void tryMating() {
-        if (queen.isInMatingMood()) {
+        if (queen.isInMatingMood())
             letsMate();
-        } else {
+        else
             getKickedOff();
-        }
     }
 
     private void letsMate() {

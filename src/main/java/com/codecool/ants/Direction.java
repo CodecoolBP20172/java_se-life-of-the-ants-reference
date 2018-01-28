@@ -7,7 +7,7 @@ public enum Direction {
 
     private static Random random = new Random();
     private static int size = Direction.values().length;
-    private int deltaX, deltaY;
+    private final int deltaX, deltaY;
 
     Direction(int deltaX, int deltaY) {
         this.deltaX = deltaX;
@@ -19,16 +19,12 @@ public enum Direction {
     }
 
     public Direction turnRight() {
-        int ord = this.ordinal() + 1;
-        if (ord == size)
-            ord = 0;
+        int ord = (this.ordinal() + 1) % size;
         return Direction.values()[ord];
     }
 
     public Direction turnLeft() {
-        int ord = this.ordinal() - 1;
-        if (ord < 0)
-            ord = size - 1;
+        int ord = (this.ordinal() - 1 + size) % size;
         return Direction.values()[ord];
     }
 
